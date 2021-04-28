@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Fashion Feet</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-link">
+                <img src="/FFlogo.jpg" alt="Fashion Feet Logo" class="brand-image img-circle elevation-3">
+                <span class="brand-text font-weight-light">Fashion Feet</span>
+            </a>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a href="/add" class="nav-link">
+                                <i class="nav-icon text-info fas fa-cart-plus"></i>
+                                <p>Add Product</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/details" class="nav-link">
+                                <i class="nav-icon fas fa-database text-info"></i>
+                                <p class="text">Sales Details</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/update" class="nav-link">
+                                <i class="nav-icon text-info fas fa-upload"></i>
+                                <p class="text">Update Sales</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+
+            <section class="content-header">
+                <h1>Fashion Feet Inventory Management</h1>
+            </section>
+
+            <section class="content">
+                <div class="card" style="margin-left: 5px; width:500px">
+                    <div class="card-header bg-info">
+                        <h3 class="card-title">Update Stock Details</h3>
+                    </div>
+                    <div class="card-body table-responsive p-0" style="height: 500px">
+                        <form action="/edited" method="post" style="padding: 20 0 0 10; margin-bottom:0">
+                            <div class="form-group">
+                                <label>
+                                    Product ID:<%=users[0]['Product ID']%>
+                                </label>
+                                <input type="hidden" name="pid" value=<%=users[0][ 'Product ID']%>>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Brand:<%=users[0]['Brand']%>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Category:<%=users[0]['Category']%>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Product Name:<%=users[0]['Name']%>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Size:<%=users[0]['Size']%>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Old Stock:<%=users[0]['Quantity']%> 
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    New Stock 
+                                </label>
+                                <input type="number" placeholder="New Quantity" name="newqty" required>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Old Cost Price:<%=users[0]['Cost Price']%>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    New Cost Price
+                                </label>
+                                <input type="number" placeholder="Cost Price" name="newcp" required>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Old Selling Price:<%=users[0]['Selling Price']%>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    New Selling Price
+                                </label>
+                                <input type="number" placeholder="Selling Price" name="newsp" required>
+                            </div>
+                            <div class="card-footer" style="margin-left:-10px; height: min-content;">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                                <a href="/" class="btn btn-danger" style="margin-left: 200px;">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
