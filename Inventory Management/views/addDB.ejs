@@ -43,30 +43,6 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item">
-                            <a href="/auth?dbName=<%=dbName%>&operation=add" class="nav-link">
-                                <i class="nav-icon text-info fas fa-cart-plus"></i>
-                                <p>Add Product</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/details?dbName=<%=dbName%>" class="nav-link">
-                                <i class="nav-icon fas fa-database text-info"></i>
-                                <p class="text">Sales Details</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/auth?dbName=<%=dbName%>&operation=update" class="nav-link">
-                                <i class="nav-icon text-info fas fa-upload"></i>
-                                <p class="text">Update Sales</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/show?dbName=<%=dbName%>" class="nav-link">
-                                <i class="nav-icon text-info fas fa-upload"></i>
-                                <p class="text">Show Inventory</p>
-                            </a>
-                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -82,19 +58,40 @@
             </section>
 
             <section class="content">
-                <div class="card">
-                    <div class="card-header bg-danger">
-                        <h3 class="card-title">
-                            <%=msg%>
-                        </h3>
+                <div class="card" style="margin-left: 5px; width:600px">
+                    <div class="card-header bg-info">
+                        <h3 class="card-title">Add new stock</h3>
+                    </div>
+                    <div class="card-body table-responsive p-0">
+                        <form action="/addedDB" method="post" style="padding: 20 0 0 10; margin-bottom:0">
+                            <div class="form-group">
+                                <label>
+                                    Cold Storage Name
+                                </label>
+                                <input type="text" placeholder="Cold Storage Name" name="CSName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Owner Name 
+                                </label>
+                                <input type="text" placeholder="Owner Name" name="OwnerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Phone Number 
+                                </label>
+                                <input type="text" placeholder="Phone Number" name="Phone Number" required>
+                            </div>
+
+                            <div class="card-footer" style="margin-left:-10px; height: min-content;">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                                <a href="/" class="btn btn-danger" style="margin-left: 200px;">Cancel</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <a class="btn btn-info btn-sm" href="/update">I understand,go back</a>
-                <a class="btn btn-info btn-sm" href="/">Home</a>
             </section>
         </div>
-
-
     </div>
 </body>
 

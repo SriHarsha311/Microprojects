@@ -26,7 +26,7 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/" class="nav-link">Home</a>
+                    <a href="/" class="nav-link"><i class="fas fa-home"></i>Home</a>
                 </li>
             </ul>
         </nav>
@@ -44,24 +44,29 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="/add" class="nav-link">
+                            <a href="/auth?dbName=<%=dbName%>&operation=add" class="nav-link">
                                 <i class="nav-icon text-info fas fa-cart-plus"></i>
                                 <p>Add Product</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/details" class="nav-link">
+                            <a href="/details?dbName=<%=dbName%>" class="nav-link">
                                 <i class="nav-icon fas fa-database text-info"></i>
                                 <p class="text">Sales Details</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/update" class="nav-link">
+                            <a href="/auth?dbName=<%=dbName%>&operation=update" class="nav-link">
                                 <i class="nav-icon text-info fas fa-upload"></i>
                                 <p class="text">Update Sales</p>
                             </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="/show?dbName=<%=dbName%>" class="nav-link">
+                                <i class="nav-icon text-info fas fa-upload"></i>
+                                <p class="text">Show Inventory</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
